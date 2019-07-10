@@ -19,7 +19,6 @@ class ModelGConvTranspose(nn.Module):
         self.conv5 = nn.ConvTranspose2d(32, 16, 3)
         self.conv6 = nn.ConvTranspose2d(16, 1, 3)
         
-        
     def forward(self, z, ParticleMomentum_ParticlePoint):
         x = F.leaky_relu(self.fc1(
             torch.cat([z, ParticleMomentum_ParticlePoint], dim=1)
